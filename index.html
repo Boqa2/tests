@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylePopup.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/icon.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img
+          id="img1"
+          class="img"
+          src="png/1.png"
+          alt="Explore Waterloo Region"
+        />
+        <img
+          id="img2"
+          class="img"
+          src="png/2.png"
+          alt="Explore Waterloo Region"
+        />
+        <img
+          id="img3"
+          class="img"
+          src="png/3.png"
+          alt="Explore Waterloo Region"
+        />
+        <img
+          src="https://files.explorewaterloo.ca/uploads/2021/04/ewr-logo-web.svg"
+          class="logo"
+          alt=""
+        />
+      </div>
+      <div class="text-section">
+        <img
+          src="https://files.explorewaterloo.ca/uploads/2021/04/ewr-logo-web.svg"
+          class="logos"
+          alt=""
+        />
+
+        <div class="conteiner-anime">
+          <div class="anime1">
+            <div class="texts">
+              <p class="text-anime1">Zero schedule</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime1">Zero screens</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime1">Endless discovery</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+          </div>
+          <div class="anime2">
+            <div class="texts">
+              <p class="text-anime2">New roads</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime2">New adventures</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime2">New heights</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+          </div>
+          <div class="anime3">
+            <div class="texts">
+              <p class="text-anime3">Be joyful</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime3">Be jovial</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+            <div class="texts">
+              <p class="text-anime3">Be Bavarian</p>
+              <div class="box">
+                <span>&#10003;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="for-button">
+          <button id="button" class="button explore-button">
+            HOVER TO EXPLORE
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="popUp" class="popup hidden">
+      <div class="bg">
+        <img src="assest/Trip/Family-Fun.jpg" alt="" />
+      </div>
+      <div class="container-popup">
+        <div class="content-popup">
+          <div class="left-side">
+            <div class="fils">
+              <a href="https://explorewaterloo.ca/roadtrip/" target="_blank">
+                <img class="logotype" src="png/ewr-logo-web.svg" alt="" />
+              </a>
+              <ul>
+                <li data-slide-index="0" class="list active">
+                  Choose Your Road Trip
+                </li>
+                <li data-slide-index="1" class="list">Family Itinerary</li>
+                <li data-slide-index="2" class="list">Pals Itinerary</li>
+                <li data-slide-index="3" class="list">Partners Itinerary</li>
+              </ul>
+            </div>
+          </div>
+          <div class="slider-container">
+            <div class="slider-inner">
+              <div class="slide slider-choose">
+                <div id="choose" class="section1 section swiper">
+                  <div class="roots">
+                    <div class="heders-sec1">
+                      <h1>Choose Your Road Trip</h1>
+                      <p class="choose">
+                        Whatever kind of road trip you’re planning, we’ve got an
+                        itinerary to match. Check out the one that’s right for
+                        you.
+                      </p>
+                    </div>
+                    <div class="container-choose">
+                      <div class="swiper-choose">
+                        <div class="inner-choose">
+                          <div
+                            onclick="goToSlide(2)"
+                            class="swiper-slide slides"
+                          >
+                            <img src="assest/Trip/Pals.jpg" alt="" />
+                            <p>Pals</p>
+                          </div>
+                          <div
+                            onclick="goToSlide(1)"
+                            class="swiper-slide slides"
+                          >
+                            <img src="assest/Trip/Family-Fun.jpg" alt="" />
+                            <p>Family</p>
+                          </div>
+                          <div
+                            onclick="goToSlide(3)"
+                            class="swiper-slide slides"
+                          >
+                            <img src="assest/Trip/Partners.jpg" alt="" />
+                            <p>Partners</p>
+                          </div>
+                        </div>
+                        <div class="custom-prev">❮</div>
+                        <div class="custom-next">❯</div>
+                        <div class="dots-trip"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide slider-family">
+                <div id="family" class="section section2 swiper-family">
+                  <div class="container-family">
+                    <div class="inner-family">
+                      <div class="family">
+                        <a
+                          href="https://explorewaterloo.ca/listing/bingemans-big-splash-4/"
+                          target="_blank"
+                          class="slide-family"
+                        >
+                          <div class="heders">
+                            <h1>Bingemans</h1>
+                            <p class="bingemans">
+                              Bingemans offers fun for kids of all ages! Enjoy
+                              summer while staying cool at Big Splash water
+                              park. The fun continues with FunworX indoor
+                              playground, mini-golf, 10-pin bowling, on-site
+                              camping, great food, major esports events and
+                              more. In other words, Bingemans has something to
+                              keep everyone in your family entertained!
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Family Fun Itinerary/Bingemans.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/listing/cambridge-butterfly-conservatory-3/"
+                          target="_blank"
+                          class="slide-family"
+                        >
+                          <div class="heders">
+                            <h1>The Cambridge Butterfly...</h1>
+                            <p class="bingemans">
+                              While education is the cornerstone of this
+                              remarkable conservatory, families flock here to
+                              experience the wonder of a tropical paradise as
+                              they walk among the butterflies, birds and other
+                              small animals who live there. Thousands of
+                              free-flying butterflies await, including exotic
+                              species from Costa Rica and the Philippines. Bring
+                              the kids and turn into one yourself as you explore
+                              nature’s magic.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Family Fun Itinerary/Cambridge-Butterfly-Conservatory.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/listing/homewood-suites-by-hilton-cambridge-waterloo-2/"
+                          target="_blank"
+                          class="slide-family"
+                        >
+                          <div class="heders">
+                            <h1>Homewood Suites</h1>
+                            <p class="bingemans">
+                              Homewood Suites by Hilton Cambridge-Waterloo,
+                              located by the 401, and Homewood Suites
+                              Waterloo-St. Jacobs, located by its famous Farmers
+                              Market and Village, both provide an ideal home
+                              away from home. With one-and-two bedroom suites
+                              with full kitchens and more, it’s no surprise
+                              TripAdvisor has included Homewood Suites by Hilton
+                              in its Top 25 Hotels for Families in Canada 3
+                              years running. 
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Family Fun Itinerary/HomewoodSuites.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/listing/themuseum/"
+                          target="_blank"
+                          class="slide-family"
+                        >
+                          <div class="heders">
+                            <h1>THEMUSEUM</h1>
+                            <p class="bingemans">
+                              If your kid’s idea of a museum is a musty, boring
+                              place, you’ve got to take them to THEMUSEUM in
+                              downtown Kitchener. This modern, interactive
+                              playground for the mind has hosted past exhibits
+                              that have celebrated everything from Avatar to the
+                              Rolling Stones. It’s a fun experience that will
+                              make you rethink what a museum can be!
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Family Fun Itinerary/TheMuseum.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/african-lion-safari-3/"
+                          target="_blank"
+                          class="slide-family"
+                        >
+                          <div class="heders">
+                            <h1>African Lion Safari</h1>
+                            <p class="bingemans">
+                              Drive through the 9 km Game Reserve for an
+                              up-close look at countless birds and animals, many
+                              classified as endangered or threatened. See
+                              zebras, lions, rhinos, ostriches, and more–all
+                              freely roaming in spacious environments. African
+                              Lion Safari has earned a reputation for their
+                              care, management, and conservation of endangered
+                              species, ensuring their animals receive the best
+                              possible care.
+                            </p>
+                          </div>
+
+                          <div class="transla">
+                            <img
+                              src="assest/Family Fun Itinerary/African-Lion-Safari.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="custom-prevs-f">❮</div>
+                      <div class="custom-nexts-f">❯</div>
+                      <div class="dots-family"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide slider-pals">
+                <div id="pals" class="section section1">
+                  <div class="pals-container">
+                    <div class="inner-pals">
+                      <div class="swiper-pals">
+                        <a
+                          href="https://explorewaterloo.ca/listing/canoeing-the-grand-2/"
+                          target="_blank"
+                          class="swipe-pals"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Canoeing the Grand</h1>
+                            <p class="bingemans">
+                              The aptly-named Grand River is an adventure
+                              awaiting groups large and small. Trips range from
+                              90 minutes to 8 hours, and distances from 7 to 38
+                              kilometres – with lots of places to stroll along
+                              the shallows or pull over for a picnic lunch. If
+                              you prefer a lazier trip along the river, tubing
+                              is also offered along a shorter stretch of the
+                              river. Kayaks, tandem kayaks and paddleboats are
+                              also available.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/pals Itinerary/Canoeing-Grand.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/listing/conestogo-river-horseback-adventures-2/"
+                          target="_blank"
+                          class="swipe-pals"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Conestoga River Horseback</h1>
+                            <p class="bingemans">
+                              Horseback riding along the banks of the scenic
+                              Conestogo River is an experience best shared with
+                              friends. Trail rides are offered all year round,
+                              and vary in length from 1, 2 and 4 hours. There is
+                              also an indoor riding arena, a meeting/event room
+                              with kitchenette, a large, attached deck, BBQ
+                              facilities, washrooms, parking on site, and a fire
+                              pit at the picnic area. Get ready to saddle-up for
+                              adventure!
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/pals Itinerary/Contestoga.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/delta-waterloo-2/"
+                          target="_blank"
+                          class="swipe-pals"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Delta Hotels by Marriott Waterloo</h1>
+                            <p class="bingemans">
+                              Located in the heart of Uptown Waterloo, the Delta
+                              Waterloo is close to boutique shops, incredible
+                              restaurants and local attractions. After exploring
+                              the best the region has to offer, return to the
+                              Delta for a dip in the pool or relax in your
+                              stylish suite. Then it’s down to Proof Kitchen &
+                              Lounge for work...
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/pals Itinerary/Delta-Hotels.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/four-fathers-brewing-co-2/"
+                          target="_blank"
+                          class="swipe-pals"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Four Fathers Brewing Co.</h1>
+                            <p class="bingemans">
+                              Four Fathers began as the vision of four hockey
+                              dads – an artist, an entrepreneur, a corporate
+                              executive and a maverick – all of whom shared a
+                              love of handcrafted beer. Now located in the heart
+                              of Cambridge’s Hespeler Village, the microbrewery
+                              is renowned for making premium craft beers notable
+                              for their rich and complex character. Visit their
+                              tap room to sample their handcrafted beers and
+                              uniquely imaginative pub cuisine...
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/pals Itinerary/Four-Fathers.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/willibald-farm-distillery-brewery/"
+                          target="_blank"
+                          class="swipe-pals"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Willibald Farm Distillery & Brewery</h1>
+                            <p class="bingemans">
+                              Founded in 2017, Willibald is a first-generation
+                              farm distillery and brewery located outside of
+                              Cambridge in Ayr, Ontario. Striving to create
+                              progressive, high-quality products that respect
+                              tradition but aren’t bound by it, this is where
+                              rural craftsmanship meets urban sophistication.
+                              Enjoy seasonally focused food on their covered
+                              outdoor patio along with a glass of their finest.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/pals Itinerary/Willibald.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="custom-prevs">❮</div>
+                      <div class="custom-nexts">❯</div>
+                      <div class="dots-pals"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide slider-partners">
+                <div id="partners" class="section section1">
+                  <div class="container-partners">
+                    <div class="inner-partners">
+                      <div class="partners-slide">
+                        <a
+                          href="https://explorewaterloo.ca/st-jacobs/"
+                          target="_blank"
+                          class="partners"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Experience St. Jacobs</h1>
+                            <p class="bingemans">
+                              With Ontario’s most famous Farmers’ Market, St.
+                              Jacobs Village, the Market Road Antiques
+                              marketplace and more, this is truly as timeless a
+                              place as you’ll find in Ontario. Home to the
+                              largest population of Old Order Mennonites in
+                              Canada, you’re sure to see farmers traveling the
+                              local roads by horse & buggy. And don’t forget to
+                              visit the St. Jacobs Outlet Mall for some great
+                              deals!
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Partners Itinerary/St-Jacobs.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/drayton-entertainment-2/"
+                          target="_blank"
+                          class="partners"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Drayton Entertainment</h1>
+                            <p class="bingemans">
+                              One of Canada’s most successful professional
+                              theatre companies, Drayton Entertainment produces
+                              critically praised Broadway musicals, comedies and
+                              dramas in all seven of its Ontario theatres. Three
+                              of those stages – the Hamilton Family Theatre
+                              Cambridge, the St. Jacobs Country Playhouse and
+                              the St. Jacobs Schoolhouse Theatre – are right
+                              here in Waterloo Region. So come to play, then
+                              stay for a play.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Partners Itinerary/Drayton.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/listing/the-charcuterie-bar-2/"
+                          target="_blank"
+                          class="partners"
+                        >
+                          <div class="heders-sec1">
+                            <h1>The Charcuterie Bar</h1>
+                            <p class="bingemans">
+                              Created by food lovers for food lovers, the
+                              Charcuterie Bar in St. Jacobs provides a unique
+                              and immersive dining experience. See the butchers
+                              working their magic and witness the service team
+                              create beautiful boards from house-made and
+                              locally curated charcuterie. Their skilled staff
+                              is happy to suggest the perfect beverage selection
+                              to compliment your food.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Partners Itinerary/Charcuterie.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+
+                        <a
+                          href="https://explorewaterloo.ca/west-montrose-covered-bridge/"
+                          target="_blank"
+                          class="partners"
+                        >
+                          <div class="heders-sec1">
+                            <h1>
+                              West Montrose Covered Bridge (“Kissing Bridge”)
+                            </h1>
+                            <p class="bingemans">
+                              A landmark that’s now over 140 years old, the West
+                              Montrose Covered (“Kissing”) Bridge was built in
+                              1881 by John Bear, a Mennonite barn builder.
+                              Whether you’re a lover of timeless craftsmanship
+                              or just looking for a romantic setting – with a
+                              nickname to match – the Kissing Bridge should be
+                              passed through during your visit here.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Partners Itinerary/West-Montrose.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                        <a
+                          href="https://explorewaterloo.ca/listing/hampton-inn-and-suites-waterloo-st-jacobs-2/"
+                          target="_blank"
+                          class="partners"
+                        >
+                          <div class="heders-sec1">
+                            <h1>Hampton Inn & Suites Waterloo St. Jacobs</h1>
+                            <p class="bingemans">
+                              One of the region’s newest hotels, this new
+                              Hampton location is just minutes from Canada’s
+                              largest farmers’ market, the St. Jacobs Farmers’
+                              Market, and is a short drive from the beautiful
+                              Village of St. Jacobs. It also provides all the
+                              comforts and amenities you need for a relaxing
+                              escape for two.
+                            </p>
+                          </div>
+                          <div class="transla">
+                            <img
+                              src="assest/Partners Itinerary/Hampton-Inn.jpg"
+                              alt=""
+                            />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="custom-prevs1">❮</div>
+                      <div class="custom-nexts1">❯</div>
+                      <div class="dots-partners"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ends">
+            <div onclick="" class="but"><i class="bx bx-x"></i></div>
+            <div class="social">
+              <p>Fallow us on</p>
+              <span
+                ><a href="https://www.facebook.com/ExploreWaterlooRegion/"
+                  ><i class="bx bxl-facebook"></i></a
+              ></span>
+              <span
+                ><a href="https://www.instagram.com/explorewaterlooregion/"
+                  ><i class="bx bxl-instagram"></i></a
+              ></span>
+              <span
+                ><a
+                  href="https://www.youtube.com/channel/UCKLz7thoofkqN8hVun6xuAQ"
+                  ><i class="bx bxl-youtube"></i></a
+              ></span>
+              <span
+                ><a href="https://twitter.com/ExploreWR"
+                  ><i class="bx bxl-twitter"></i></a
+              ></span>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-content">
+          <div class="explore">
+            <p>Plan the perfect road trip. Get set. Get stoked.</p>
+            <a href="https://explorewaterloo.ca/roadtrip/">EXPLORE MORE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

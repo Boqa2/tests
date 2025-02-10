@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  max-width: 970px;
+  max-height: 270px;
+  margin: 50px auto;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.image-container {
+  width: 70%;
+  height: 270px;
+  overflow: hidden;
+  position: relative;
+  background: #005f73;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+@keyframes fadeFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.img:nth-child(1) {
+  animation: fadeFromTop 12s infinite;
+}
+.img:nth-child(2) {
+  animation: fadeFromLeft 12s infinite;
+  animation-delay: 4s;
+}
+.img:nth-child(3) {
+  animation: fadeFromRight 12s infinite;
+  animation-delay: 8s;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  width: 20%;
+  left: 10px;
+  border-radius: 5px;
+}
+.text-section {
+  width: 70%;
+  background: #005f73;
+  color: white;
+  padding: 35px 35px 20px 35px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border: 1px solid #fff;
+}
+.box span {
+  margin-left: 8px;
+  font-size: 26px;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
+.explore-button {
+  background: #4a90e2;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  font-size: 16px;
+  z-index: 10;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.explore-button:hover {
+  background: #357ac3;
+  animation: loading 1s infinite;
+}
+
+.for-button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  transition: 0.4s ease-in-out;
+}
+
+.texts {
+  display: flex;
+  gap: 10px;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 22px;
+  align-items: center;
+  font-family: sans-serif;
+}
+.logos {
+  display: none;
+}
+.anime1,
+.anime2,
+.anime3 {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.anime1 {
+  animation: fadeFromTopT 12s infinite;
+}
+.anime2 {
+  animation: fadeFromLeftT 12s infinite;
+  animation-delay: 4s;
+}
+.anime3 {
+  animation: fadeFromRightT 12s infinite;
+  animation-delay: 8s;
+}
+@keyframes fadeFromTopT {
+  0% {
+    opacity: 0;
+    transform: translateX(-65%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromLeftT {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeFromRightT {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 790px) {
+  .container {
+    max-width: 790px;
+    max-height: 90px;
+  }
+  .image-container {
+    width: 35%;
+  }
+  .box {
+    width: 15px;
+    height: 15px;
+  }
+  .box > span {
+    font-size: 20px;
+  }
+  .text-section {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  .img {
+    width: 100%;
+    height: 90px;
+  }
+
+  .logo {
+    display: none;
+  }
+  .logos {
+    display: block;
+    z-index: 999;
+    width: 20%;
+  }
+  .conteiner-anime {
+    width: 100%;
+  }
+  .for-button {
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .texts {
+    font-size: 10px;
+    font-weight: 600;
+  }
+  .anime1,
+  .anime2,
+  .anime3 {
+    top: 15px;
+    left: 145px;
+    width: 30%;
+  }
+  .explore-button {
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 300px) {
+  .container {
+    max-width: 300px;
+    max-height: 250px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+
+    position: relative;
+  }
+  .explore-button {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 250px;
+  }
+  .logos {
+    display: none;
+  }
+  .logo {
+    display: block;
+    right: 100px;
+    left: 100%;
+    transform: translateX(-100%);
+    width: 30%;
+    z-index: 2;
+  }
+  .anime1,
+  .anime2,
+  .anime3 {
+    top: 15px;
+    left: 10px;
+    z-index: 0;
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+    color: #004452;
+    font-weight: 700;
+  }
+  .box {
+    border-color: #00d5ff;
+  }
+  .text-section {
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
+    position: absolute;
+    padding: 10px;
+    background: #00607300;
+    top: 0;
+  }
+  .img {
+    width: 100%;
+    height: 250px;
+  }
+}
