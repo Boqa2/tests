@@ -7,7 +7,7 @@
   display: flex;
   max-width: 970px;
   max-height: 270px;
-  margin: 50px auto;
+  margin: 35px auto;
   border-radius: 10px;
   overflow: hidden;
 
@@ -41,7 +41,7 @@
     opacity: 1;
     transform: translateX(0);
   }
-  65% {
+  50% {
     opacity: 0;
     transform: translateX(100%);
   }
@@ -63,7 +63,7 @@
     opacity: 1;
     transform: translateX(0);
   }
-  65% {
+  50% {
     opacity: 0;
     transform: translateX(-100%);
   }
@@ -85,7 +85,7 @@
     opacity: 1;
     transform: translateX(0);
   }
-  65% {
+  50% {
     opacity: 0;
     transform: translateY(-100%);
   }
@@ -186,7 +186,7 @@
 .anime3 {
   position: absolute;
   top: 30px;
-  left: 50px;
+  left: 35px;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -205,21 +205,21 @@
 @keyframes fadeFromTopT {
   0% {
     opacity: 0;
-    transform: translateX(-65%);
+    transform: scale(2);
   }
   10% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
   35% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
-  65% {
+  50% {
     opacity: 0;
-    transform: translateY(100%);
   }
-  100% {
+  80% {
+    transform: scale(-1);
     opacity: 0;
   }
 }
@@ -227,21 +227,21 @@
 @keyframes fadeFromLeftT {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: scale(1);
   }
   10% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
   35% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
-  65% {
+  50% {
     opacity: 0;
-    transform: translateY(-100%);
   }
-  100% {
+  80% {
+    transform: scale(-1);
     opacity: 0;
   }
 }
@@ -249,21 +249,21 @@
 @keyframes fadeFromRightT {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: scale(2);
   }
   10% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
   35% {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
-  65% {
+  50% {
     opacity: 0;
   }
-  100% {
-    transform: translateX(-100%);
+  80% {
+    transform: scale(-1);
     opacity: 0;
   }
 }
@@ -272,6 +272,7 @@
   .container {
     max-width: 790px;
     max-height: 90px;
+    transform: scale(1);
   }
   .image-container {
     width: 35%;
@@ -330,14 +331,18 @@
 }
 
 @media (max-width: 300px) {
+  body{
+    transform: scale(1);
+    width: 100%;
+  }
   .container {
-    max-width: 300px;
-    max-height: 250px;
+    width: 100%;
+    max-height: 235px;
     padding: 0;
     margin: 0;
     border-radius: 0;
-
     position: relative;
+    transform: scale(1);
   }
   .explore-button {
     width: 100%;
@@ -346,7 +351,7 @@
 
   .image-container {
     width: 100%;
-    height: 250px;
+    height: 235px;
   }
   .logos {
     display: none;
@@ -386,6 +391,6 @@
   }
   .img {
     width: 100%;
-    height: 250px;
+    height: 235px;
   }
 }

@@ -11,7 +11,7 @@
   flex-direction: column;
   width: 100%;
   height: 400%;
-  transition: transform 2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
@@ -30,12 +30,12 @@
 }
 .inner-choose {
   display: flex;
-  width: 300%;
+  width: 310%;
   height: 100%;
   gap: 15px;
   justify-content: flex-start;
-  padding: 0 170px;
-  transition: transform 2s ease;
+  padding: 0 190px;
+  transition: transform 0.1s ease;
 }
 .swiper-choose {
   width: 100%;
@@ -48,7 +48,7 @@
 }
 .container-choose {
   width: 100%;
-  height: 75%;
+  height: 80%;
 }
 .swiper-slide > h1 {
   font-size: 28px;
@@ -74,9 +74,9 @@
   margin-top: 10px;
 }
 .dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid rgba(0, 79, 113, 255);
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid rgba(0, 79, 113, 255);
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
@@ -98,23 +98,24 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .family {
   display: flex;
   width: 500%;
-  height: 90%;
+  height: 100%;
   color: rgba(0, 79, 113, 255);
   position: relative;
   justify-content: space-around;
-  transition: transform 2s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 .inner-family {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-direction: column;
+  gap: 20px;
   overflow: hidden;
 }
 
@@ -126,7 +127,7 @@
 .slide-family {
   width: 786px;
   height: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   color: rgba(0, 79, 113, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -135,15 +136,13 @@
   overflow: hidden;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  gap: 18px;
 }
 
 .transla {
   overflow: hidden;
-  width: 86%;
-  height: 363px;
-  max-height: 363px;
+  width: 70%;
+  height: 390px;
   object-fit: cover;
 }
 .transla > img {
@@ -152,41 +151,23 @@
   object-fit: fill;
   transition: 0.8s ease-in;
 }
-.transla > img:hover {
-  transform: scale(1.04);
+.heders {
+  padding: 0 30px;
 }
 
 .swiper-pals {
   display: flex;
   width: 500%;
-  height: 90%;
+  height: 100%;
   color: rgba(0, 79, 113, 255);
   position: relative;
   justify-content: space-around;
-  transition: transform 1.5s ease-in-out;
-}
-
-.swipe-pals {
-  width: 786px;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  color: rgba(0, 79, 113, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-decoration: none;
-  text-align: center;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  transition: transform 0.5s ease-in-out;
 }
 .inner-pals {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
-  gap: 20px;
   position: relative;
   flex-direction: column;
   overflow: hidden;
@@ -204,13 +185,13 @@
   color: rgba(0, 79, 113, 255);
   position: relative;
   justify-content: space-around;
-  transition: transform 2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .swipe-pals {
   width: 786px;
   height: 100%;
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
   color: rgba(0, 79, 113, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -219,15 +200,14 @@
   overflow: hidden;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  gap: 10px;
 }
 .inner-partners {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   position: relative;
   flex-direction: column;
   overflow: hidden;
@@ -242,6 +222,7 @@
   width: 786px;
   height: 100%;
   padding: 10px;
+  padding-top: 0;
   display: flex;
   color: rgba(0, 79, 113, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -251,7 +232,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 18px;
 }
 
 .disabled {

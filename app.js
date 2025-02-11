@@ -2,7 +2,6 @@ const popUp = document.querySelector("#popUp");
 const button = document.querySelector("#button");
 const x = document.querySelector(".but");
 const cont = document.querySelector(".container");
-const li = document.querySelectorAll(".list");
 
 button.addEventListener("mouseenter", () => {
   setTimeout(() => {
@@ -12,13 +11,6 @@ button.addEventListener("mouseenter", () => {
   }, 1000);
 });
 
-function startSlide(index) {
-  li.forEach((e) => {
-    e.addEventListener("click", () => {
-      index == 0;
-    });
-  });
-}
 document.addEventListener("DOMContentLoaded", function () {
   const slidesContainer = document.querySelector(".slider-inner");
   const slides = document.querySelectorAll(".slide");
@@ -44,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startAutoSlide() {
-    autoSlideInterval = setInterval(() => changeSlide(1), 4000);
+    autoSlideInterval = setInterval(() => changeSlide(1), 7000);
   }
   window.goToSlide = function (index) {
     currentIndex = index;
@@ -69,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       button.style.display = "block";
       cont.style.display = "flex";
-    }, 1200);
+    }, 0);
   });
   slidesContainer.addEventListener(
     "touchstart",
@@ -110,78 +102,97 @@ document.addEventListener("DOMContentLoaded", function () {
   return goToSlide();
 });
 
-function sliderS(slider, slide, dots, next, prev, i) {
+function sliderS(slider, slide, dots, next, prev) {
   const slidesContainer = document.querySelector(slider);
   const slides = document.querySelectorAll(slide);
   const prevButton = document.querySelector(prev);
   const nextButton = document.querySelector(next);
   const dotsContainer = document.querySelector(dots);
 
-  let currentIndex = 0;
-  let slideWidth = slides[0].clientWidth;
+  let currentIndex = 1; 
+  let slideWidth = slides[0].offsetWidth;
+
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+
+  slidesContainer.appendChild(firstClone);
+  slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
+
+  const allSlides = document.querySelectorAll(slide);
+  const realSlidesCount = slides.length;
+
+  slidesContainer.style.transform = `translateX(${
+    -currentIndex * slideWidth
+  }px)`;
 
   function updateSlider() {
     slidesContainer.style.transform = `translateX(${
       -currentIndex * slideWidth
     }px)`;
     updateDots();
-    updateButtons();
+    updateText(); 
   }
 
   function nextSlide() {
-    if (currentIndex < slides.length - 1) {
-      currentIndex++;
-      updateSlider();
+    if (currentIndex >= allSlides.length - 1) return;
+    currentIndex++;
+    updateSlider();
+
+    if (currentIndex === allSlides.length - 1) {
+      setTimeout(() => {
+        slidesContainer.style.transition = "none";
+        currentIndex = 1;
+        slidesContainer.style.transform = `translateX(${
+          -currentIndex * slideWidth
+        }px)`;
+        updateDots();
+        updateText();
+      }, 500);
     }
   }
 
   function prevSlide() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
+    if (currentIndex <= 0) return;
+    currentIndex--;
+    updateSlider();
+
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        slidesContainer.style.transition = "none";
+        currentIndex = allSlides.length - 2;
+        slidesContainer.style.transform = `translateX(${
+          -currentIndex * slideWidth
+        }px)`;
+        updateDots();
+        updateText();
+      }, 500);
     }
   }
-
-  li.forEach((e) => {
-    e.addEventListener("click", () => {
-      currentIndex = 0;
-      updateSlider();
-    });
-  });
 
   function createDots() {
-    slides.forEach((_, index) => {
-      if (currentIndex >= 0) {
-        currentIndex = 0;
-      }
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < realSlidesCount; i++) {
       const dot = document.createElement("div");
       dot.classList.add("dot");
-      if (index === currentIndex) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        currentIndex = index;
-        updateSlider();
-      });
+      dot.addEventListener("click", () => goToSlide(i));
       dotsContainer.appendChild(dot);
-    });
+    }
   }
-  function updateButtons() {
-    if (currentIndex === 0) {
-      prevButton.classList.add("disabled");
-    } else {
-      prevButton.classList.remove("disabled");
-    }
 
-    if (currentIndex === slides.length - 1) {
-      nextButton.classList.add("disabled");
-    } else {
-      nextButton.classList.remove("disabled");
-    }
+  function goToSlide(index) {
+    currentIndex = index + 1;
+    updateSlider();
   }
 
   function updateDots() {
     document.querySelectorAll(".dot").forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentIndex);
-      console.log(currentIndex);
+      dot.classList.toggle("active", index === currentIndex - 1);
+    });
+  }
+
+  function updateText() {
+    document.querySelectorAll(".text-slider").forEach((text, index) => {
+      text.style.display = index === currentIndex - 0 ? "block" : "none";
     });
   }
 
@@ -203,7 +214,9 @@ function sliderS(slider, slide, dots, next, prev, i) {
 
   createDots();
   updateSlider();
+  updateText(); 
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   sliderS(
@@ -211,10 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".swiper-slide",
     ".dots-trip",
     ".custom-next",
-    ".custom-prev",
-    0
+    ".custom-prev"
   );
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const slidesContainer = document.querySelector(".family");
   const slides = document.querySelectorAll(".slide-family");
@@ -246,13 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
       updateSlider();
     }
   }
-
-  li.forEach((e) => {
-    e.addEventListener("click", () => {
-      currentIndex = 0;
-      updateSlider();
-    });
-  });
 
   function createDots() {
     dotsContainer.innerHTML = "";
@@ -337,13 +343,6 @@ function sliderFunction(slider, slide, dots, next, prev, i) {
       updateSlider();
     }
   }
-
-  li.forEach((e) => {
-    e.addEventListener("click", () => {
-      currentIndex = 0;
-      updateSlider();
-    });
-  });
 
   function prevSlide() {
     if (currentIndex > 0) {
