@@ -15,13 +15,12 @@ html {
   right: 0;
   left: 0;
   transition: all 2s ease;
-  transform: matrix(1);
+  transform: scale(1);
   display: flex;
   align-self: center;
   filter: blur();
   justify-content: center;
 }
-
 
 .popup::before {
   content: "";
@@ -35,7 +34,8 @@ html {
   z-index: -1;
 }
 .hidden {
-  display: none;
+  opacity: 0;
+  z-index: -1;
 }
 
 .container-popup {
@@ -89,6 +89,9 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: text 3s forwards;
+  animation-delay: 5s;
+  transition: all 1s ease-in-out;
 }
 .explore {
   width: 75%;
@@ -101,7 +104,7 @@ html {
   align-items: center;
   justify-content: space-between;
 }
-.explore > a:hover{
+.explore > a:hover {
   background: #7cb9ff;
   transform: scale(1.1);
   transition: all 0.5s ease;
@@ -120,8 +123,8 @@ html {
   font-weight: 700;
   border-radius: 5px;
   height: 40px;
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 .bottom-content {
   width: 100%;
@@ -146,10 +149,10 @@ align-items: center;
   width: 100%;
   height: 80%;
   padding: 10px;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   transform: scale(1.1);
 }
-.logotype:hover{
+.logotype:hover {
   transform: scale(1.2);
 }
 .list {
@@ -203,7 +206,7 @@ align-items: center;
 .heders-sec1 {
   width: 100%;
   color: rgba(0, 79, 113, 255);
-  font-family: gilroy,sans-serif;
+  font-family: gilroy, sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -214,7 +217,7 @@ align-items: center;
   width: 100%;
   height: 100px;
   color: rgba(0, 79, 113, 255);
-  font-family: gilroy,sans-serif;
+  font-family: gilroy, sans-serif;
   font-weight: 100 900;
   display: flex;
   justify-content: center;
@@ -291,8 +294,6 @@ align-items: center;
   right: 50px;
 }
 
-
-
 .section2 {
   width: 100%;
   display: flex;
@@ -306,7 +307,7 @@ align-items: center;
   font-size: 13px;
   font-weight: 300;
 }
-.title{
+.title {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -454,6 +455,27 @@ align-items: center;
   background: rgba(0, 79, 113, 255);
 }
 
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    transform: scale(-1);
+    opacity: 0;
+  }
+}
 @media (max-width: 1090px) {
   body {
     transform: scale(0.9);

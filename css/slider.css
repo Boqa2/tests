@@ -103,7 +103,7 @@
 }
 .family {
   display: flex;
-  width: 500%;
+  width: 700%;
   height: 100%;
   color: rgba(0, 79, 113, 255);
   position: relative;
@@ -157,7 +157,7 @@
 
 .swiper-pals {
   display: flex;
-  width: 500%;
+  width: 700%;
   height: 100%;
   color: rgba(0, 79, 113, 255);
   position: relative;
@@ -180,7 +180,7 @@
 }
 .partners-slide {
   display: flex;
-  width: 500%;
+  width: 700%;
   height: 90%;
   color: rgba(0, 79, 113, 255);
   position: relative;
