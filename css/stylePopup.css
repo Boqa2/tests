@@ -8,11 +8,11 @@ html {
   max-height: 740px;
   height: 774px;
   background-repeat: no-repeat;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  transition: all 2s ease;
+  transition: all 1s ease;
   transform: scale(1);
   display: flex;
   align-items: center;
@@ -37,10 +37,12 @@ html {
   height: 100%;
   object-fit: cover;
   position: absolute;
-  filter: blur(10px);
+  filter: blur(15px);
+  filter: brightness(20px);
   z-index: 1;
 }
 .hidden {
+  transform: scale(0);
   opacity: 0;
   z-index: -999;
 }
@@ -99,7 +101,7 @@ html {
   opacity: 0;
   transition: all 1s ease-in-out;
 }
-.text-animation{
+.text-animation {
   animation: text 1s forwards;
   animation-delay: 1s;
 }
@@ -418,6 +420,7 @@ html {
   font-size: 30px;
   color: #fff;
   padding-left: 5px;
+  padding-top: 25px;
 }
 
 .social {
@@ -480,7 +483,7 @@ html {
   }
 }
 @media (max-width: 1090px) {
-  body {
+  .width {
     transform: scale(0.9);
     transform-origin: center left;
     width: 150%;
@@ -492,7 +495,7 @@ html {
   }
 }
 @media (max-width: 790px) {
-  body {
+  .width {
     transform: scale(0.7);
     transform-origin: center left;
     width: 150%;
@@ -505,11 +508,10 @@ html {
 }
 
 @media (max-width: 660px) {
-  body {
+  .width {
     transform: scale(0.5);
     transform-origin: center left;
     width: 200%;
-
     margin: auto;
     display: flex;
     justify-content: center;
@@ -518,7 +520,7 @@ html {
   }
 }
 @media (max-width: 500px) {
-  body {
+  .width {
     transform: scale(0.4);
     transform-origin: center left;
     width: 280%;
@@ -530,7 +532,7 @@ html {
   }
 }
 @media (max-width: 320px) {
-  body {
+  .width {
     transform: scale(0.3);
     transform-origin: center left;
     width: 340%;
@@ -542,7 +544,7 @@ html {
   }
 }
 @media (max-width: 350px) {
-  body {
+  .width {
     transform: scale(0.3);
     transform-origin: center left;
     width: 330%;
@@ -554,7 +556,7 @@ html {
   }
 }
 @media (max-width: 290px) {
-  body {
+  .width {
     transform: scale(0.2);
     transform-origin: center left;
     width: 500%;
@@ -566,7 +568,7 @@ html {
   }
 }
 @media (max-width: 250px) {
-  body {
+  .width {
     transform: scale(0.15);
     transform-origin: center left;
     width: 670%;
