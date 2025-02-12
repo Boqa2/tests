@@ -42,7 +42,7 @@ html {
 }
 .hidden {
   opacity: 0;
-  z-index: -1;
+  z-index: -999;
 }
 
 .container-popup {
@@ -482,58 +482,98 @@ html {
 @media (max-width: 1090px) {
   body {
     transform: scale(0.9);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 150%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 790px) {
   body {
     transform: scale(0.7);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 150%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 
 @media (max-width: 660px) {
   body {
     transform: scale(0.5);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 200%;
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 500px) {
   body {
     transform: scale(0.4);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 280%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 320px) {
   body {
     transform: scale(0.3);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 340%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 350px) {
   body {
     transform: scale(0.3);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 330%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 290px) {
   body {
     transform: scale(0.2);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 500%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
 @media (max-width: 250px) {
   body {
     transform: scale(0.15);
-    transform-origin: top left;
+    transform-origin: center left;
     width: 670%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 }
