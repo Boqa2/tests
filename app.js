@@ -16,71 +16,87 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const menuItems = document.querySelectorAll(".list");
   const x = document.querySelector(".but");
-  const text = document.querySelector('#animetion-text')
-  const body = document.querySelector('body')
+  const text = document.querySelector("#animetion-text");
+  const body = document.querySelector("body");
 
   let currentIndex = 0;
   let slideHeight = document.querySelector(".slider-container").clientHeight;
   let autoSlideInterval;
+  let isScrolling = false;
+  let lastTouchY = 0;
+  let lastScrollTime = 0;
+  const SCROLL_DELAY = 800; 
+  const SWIPE_THRESHOLD = 100;
 
   function updateSlider() {
-    slidesContainer.style.transform = `translateY(${
-      -currentIndex * slideHeight
-    }px)`;
+    slidesContainer.style.transition = "transform 0.6s ease-in-out";
+    slidesContainer.style.transform = `translateY(${-currentIndex * slideHeight}px)`;
     menuItems.forEach((item, index) =>
       item.classList.toggle("active", index === currentIndex)
     );
   }
 
   function changeSlide(delta) {
+    const now = Date.now();
+    if (isScrolling || now - lastScrollTime < SCROLL_DELAY) return; 
+    isScrolling = true;
+    lastScrollTime = now;
+
     currentIndex = (currentIndex + delta + slides.length) % slides.length;
     updateSlider();
+
+    setTimeout(() => (isScrolling = false), 600);
   }
 
   function startAutoSlide() {
     autoSlideInterval = setInterval(() => changeSlide(1), 12000);
   }
+
   window.goToSlide = function (index) {
     currentIndex = index;
     updateSlider();
     clearInterval(autoSlideInterval);
   };
+
   button.addEventListener("mouseenter", () => {
     setTimeout(() => {
       popUp.classList.remove("hidden");
       currentIndex = 0;
       updateSlider();
-      body.classList.add("width")
-      text.classList.add("text-animation") 
+      body.classList.add("width");
+      text.classList.add("text-animation");
       cont.style.display = "none";
       button.style.display = "none";
     }, 1000);
   });
+
   x.addEventListener("click", () => {
     popUp.classList.add("hidden");
     currentIndex = 0;
     updateSlider();
     setTimeout(() => {
-      body.classList.remove("width")
-      text.classList.remove("text-animation")
+      body.classList.remove("width");
+      text.classList.remove("text-animation");
       button.style.display = "flex";
       cont.style.display = "flex";
     }, 0);
   });
-  slidesContainer.addEventListener(
-    "touchstart",
-    (event) => (this.startY = event.touches[0].clientY)
-  );
-  slidesContainer.addEventListener("touchend", (event) => {
-    const endY = event.changedTouches[0].clientY;
-    changeSlide(
-      this.startY - endY > 50 ? 1 : this.startY - endY < -50 ? -1 : 0
-    );
+
+  slidesContainer.addEventListener("touchstart", (event) => {
+    lastTouchY = event.touches[0].clientY;
   });
 
-  slidesContainer.addEventListener("mouseenter", () =>
-    clearInterval(autoSlideInterval)
-  );
+  slidesContainer.addEventListener("touchmove", (event) => {
+    let touchY = event.touches[0].clientY;
+    let deltaY = lastTouchY - touchY;
+
+    if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
+      changeSlide(deltaY > 0 ? 1 : -1);
+      lastTouchY = touchY;
+    }
+  });
+
+  slidesContainer.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
   slidesContainer.addEventListener("mouseleave", startAutoSlide);
 
   menuItems.forEach((item) =>
@@ -95,6 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSlider();
   });
 
+  slidesContainer.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX) && Math.abs(event.deltaY) > 50) {
+      changeSlide(event.deltaY > 0 ? 1 : -1);
+    }
+  });
+
   updateSlider();
   startAutoSlide();
 
@@ -104,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   return goToSlide();
 });
+
 
 function sliderS(slider, slide, dots, next, prev) {
   const slidesContainer = document.querySelector(slider);

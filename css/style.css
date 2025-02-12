@@ -192,82 +192,38 @@
   height: 100%;
   opacity: 0;
 }
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .anime1 {
-  animation: fadeFromTopT 12s infinite;
+  animation: fadeInOut 12s infinite;
 }
+
 .anime2 {
-  animation: fadeFromLeftT 12s infinite;
-  animation-delay: 4s;
+  animation: fadeInOut 12s infinite;
+  animation-delay: 4s; /* Запускается после исчезновения первого */
 }
+
 .anime3 {
-  animation: fadeFromRightT 12s infinite;
-  animation-delay: 8s;
-}
-@keyframes fadeFromTopT {
-  0% {
-    opacity: 0;
-    transform: scale(2);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0;
-  }
-  80% {
-    transform: scale(-1);
-    opacity: 0;
-  }
+  animation: fadeInOut 12s infinite;
+  animation-delay: 8s; /* Запускается после исчезновения второго */
 }
 
-@keyframes fadeFromLeftT {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0;
-  }
-  80% {
-    transform: scale(-1);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeFromRightT {
-  0% {
-    opacity: 0;
-    transform: scale(2);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  35% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0;
-  }
-  80% {
-    transform: scale(-1);
-    opacity: 0;
-  }
-}
 
 @media (max-width: 790px) {
   .container {
@@ -288,7 +244,7 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 100%;
+    height: 100%;
     align-items: center;
     padding: 0 10px;
   }
@@ -308,8 +264,9 @@
   }
   .conteiner-anime {
     width: 100%;
-    display: block;
-
+    display: flex;
+    position: relative;
+    height: 100%;
   }
   .for-button {
     justify-content: flex-start;
@@ -322,14 +279,20 @@
   .anime1,
   .anime2,
   .anime3 {
-    top: 15px;
-    left: 145px;
-    width: 30%;
+font-size: 18px;
+margin-top: 20px;
+margin-left: 20px;
+top: 0;
+left: 100%;
+transform: translateX(-100%);
+
+   
   }
   .explore-button {
     padding: 10px 15px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 400;
+
   }
 }
 
