@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const menuItems = document.querySelectorAll(".list");
   const x = document.querySelector(".but");
+  const text = document.querySelector('#animetion-text')
 
   let currentIndex = 0;
   let slideHeight = document.querySelector(".slider-container").clientHeight;
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       popUp.classList.remove("hidden");
       currentIndex = 0;
       updateSlider();
+      text.classList.add("text-animation") 
       cont.style.display = "none";
       button.style.display = "none";
     }, 1000);
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentIndex = 0;
     updateSlider();
     setTimeout(() => {
+      text.classList.remove("text-animation")
       button.style.display = "block";
       cont.style.display = "flex";
     }, 0);
