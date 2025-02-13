@@ -224,10 +224,9 @@
   animation-delay: 8s; /* Запускается после исчезновения второго */
 }
 
-
 @media (max-width: 790px) {
   .container {
-    max-width: 790px;
+    width: 790px;
     height: 90px;
   }
   .image-container {
@@ -273,26 +272,27 @@
     margin: 0;
   }
   .texts {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
   }
   .anime1,
   .anime2,
   .anime3 {
-font-size: 18px;
-margin-top: 20px;
-margin-left: 20px;
-top: 0;
-left: 100%;
-transform: translateX(-100%);
-
-   
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 20px;
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  .for-button{
+    justify-content: flex-end;
+    padding-right: 15px;
   }
   .explore-button {
     padding: 10px 15px;
     font-size: 15px;
     font-weight: 400;
-
   }
 }
 

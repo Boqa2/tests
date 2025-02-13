@@ -25,12 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let isScrolling = false;
   let lastTouchY = 0;
   let lastScrollTime = 0;
-  const SCROLL_DELAY = 800; 
+  const SCROLL_DELAY = 800;
   const SWIPE_THRESHOLD = 100;
 
   function updateSlider() {
     slidesContainer.style.transition = "transform 0.6s ease-in-out";
-    slidesContainer.style.transform = `translateY(${-currentIndex * slideHeight}px)`;
+    slidesContainer.style.transform = `translateY(${
+      -currentIndex * slideHeight
+    }px)`;
     menuItems.forEach((item, index) =>
       item.classList.toggle("active", index === currentIndex)
     );
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function changeSlide(delta) {
     const now = Date.now();
-    if (isScrolling || now - lastScrollTime < SCROLL_DELAY) return; 
+    if (isScrolling || now - lastScrollTime < SCROLL_DELAY) return;
     isScrolling = true;
     lastScrollTime = now;
 
@@ -96,7 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  slidesContainer.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+  slidesContainer.addEventListener("mouseenter", () =>
+    clearInterval(autoSlideInterval)
+  );
   slidesContainer.addEventListener("mouseleave", startAutoSlide);
 
   menuItems.forEach((item) =>
@@ -112,7 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   slidesContainer.addEventListener("wheel", (event) => {
-    if (Math.abs(event.deltaY) > Math.abs(event.deltaX) && Math.abs(event.deltaY) > 50) {
+    if (
+      Math.abs(event.deltaY) > Math.abs(event.deltaX) &&
+      Math.abs(event.deltaY) > 50
+    ) {
       changeSlide(event.deltaY > 0 ? 1 : -1);
     }
   });
@@ -126,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   return goToSlide();
 });
-
 
 function sliderS(slider, slide, dots, next, prev) {
   const slidesContainer = document.querySelector(slider);
@@ -408,3 +414,16 @@ document.addEventListener("DOMContentLoaded", () => {
     ".custom-prevs-f"
   );
 });
+
+function updateButtonText() {
+  if (window.innerWidth <= 790) {
+    button.textContent = "TAB TO EXPLORE";
+  } else {
+    button.textContent = "HOVER TO EXPLORE";
+  }
+}
+
+window.addEventListener("resize", updateButtonText);
+window.addEventListener("load", updateButtonText);
+
+
